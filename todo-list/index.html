@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my-todo-list</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="todo">
+          <div class="todo-header">
+            <h1>СПИСОК ДЕЛ</h1>
+            <div>
+              <input v-model="newItem" class="new-todo">
+              <button @click="addItem" class="add-btn">ВВОД</button>
+            </div>
+          </div>
+          <todo-item v-for="(todo, index) in todoList" :todo="todo" :key="index" @remove="removeItem"></todo-item>
+        </div>
+      </div>
+
+</body>
+
+</html>
